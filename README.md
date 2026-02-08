@@ -24,6 +24,21 @@ Timer generates TIMEOUT events independently.
 - BLINK_SLOW
 - BLINK_FAST
 
+## STATE TABLE
+  | Current State | Event       | Action       | Next State |
+| ------------- | ----------- | ------------ | ---------- |
+| OFF           | SHORT_PRESS | LED ON       | ON         |
+| OFF           | LONG_PRESS  | —            | OFF        |
+| ON            | SHORT_PRESS | —            | BLINK_SLOW |
+| ON            | LONG_PRESS  | LED OFF      | OFF        |
+| BLINK_SLOW    | TIMEOUT     | LED_Toggle() | BLINK_SLOW |
+| BLINK_SLOW    | SHORT_PRESS | —            | BLINK_FAST |
+| BLINK_SLOW    | LONG_PRESS  | LED OFF      | OFF        |
+| BLINK_FAST    | TIMEOUT     | LED_Toggle() | BLINK_FAST |
+| BLINK_FAST    | SHORT_PRESS | —            | ON         |
+| BLINK_FAST    | LONG_PRESS  | LED OFF      | OFF        |
+
+
 ## Learning Outcome
 This project focuses on embedded system logic,
 FSM design, and architecture rather than low-level drivers.
