@@ -19,10 +19,10 @@ Timer generates TIMEOUT events independently.
 - Easy migration to real MCU
 
 ## Commands
-ON
-OFF
-BLINK_SLOW
-BLINK_FAST
+-ON
+-OFF
+-BLINK_SLOW
+-BLINK_FAST
 
 ## Learning Outcome
 This project focuses on embedded system logic,
