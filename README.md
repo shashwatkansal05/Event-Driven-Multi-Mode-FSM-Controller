@@ -6,13 +6,7 @@ architecture using multiple finite state machines (FSMs).
 The system is software-simulated and does not use real hardware.
 
 ## Architecture
-UART Input
-   ↓
-Command FSM
-   ↓
-Application FSM
-   ↓
-LED Output
+UART Input --> Command FSM --> Application FSM --> LED Output
 
 Timer → TIMEOUT Event
 
